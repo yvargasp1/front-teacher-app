@@ -1,0 +1,76 @@
+<app-filter-add
+
+></app-filter-add>
+<mat-grid-list
+  [cols]="breakpoint"
+  (window:resize)="onResize($event)"
+  rowHeight="2:2.4" 
+
+>
+  <mat-grid-tile *ngFor="let teacher of teachers">
+    <mat-card class="max-w-sm">
+      <mat-card-header>
+        <img
+  
+          src="{{
+            teacher.imageUrl
+              ? URL +
+              '/teacher/uploads/img/' +
+              teacher.id +
+              '?image_url=' +
+              teacher.imageUrl
+              : 'https://via.placeholder.com/192'
+          }}"
+          class="rounded-full w-40 h-40 flex mx-20"
+          alt=""
+        />
+      </mat-card-header>
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item>
+            <span class="font-bold"> Nombres:</span>
+            {{ teacher.name }}
+          </mat-list-item>
+          <mat-list-item>
+            <span class="font-bold"> Apellidos:</span>
+            {{ teacher.lastName }}
+          </mat-list-item>
+          <mat-list-item>
+            <span class="font-bold"> Código:</span>
+            {{ teacher.teacherCode }}
+          </mat-list-item>
+          <mat-list-item>
+            <span class="font-bold"> Correo:</span>
+            {{ teacher.email }}
+          </mat-list-item>
+           <mat-list-item>
+            <span class="font-bold"> Teléfono:</span>
+            {{ teacher.phone }}
+          </mat-list-item>
+          <mat-list-item>
+            <span class="font-bold"> Profesión:</span>
+            {{ teacher.jobTitle }}
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+      <mat-card-actions class="justify-around">
+        <button
+          mat-icon-button
+          color="primary"
+          aria-label="Example icon button with a home icon"
+          (click)="openDialog(teacher)"
+        >
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button
+          mat-icon-button
+          color="warn"
+          (click)="deleteTeacher(teacher.id)"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+
