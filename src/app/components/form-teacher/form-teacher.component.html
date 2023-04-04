@@ -33,15 +33,17 @@
         name="name"
       />
 
-      <mat-error id="nameErrors" *ngIf="name.errors?.['required']">
-        Campo requerido.
-      </mat-error>
-      <mat-error *ngIf="name.errors?.['pattern']">
-        Caracter no permitido.
-      </mat-error>
-      <mat-error *ngIf="name.errors?.['minlength']">
-        Minimo de caracteres 3.
-      </mat-error>
+      <div id="nameError">
+        <mat-error *ngIf="name.errors?.['required']">
+          Campo requerido.
+        </mat-error>
+        <mat-error *ngIf="name.errors?.['pattern']">
+          Caracter no permitido.
+        </mat-error>
+        <mat-error *ngIf="name.errors?.['minlength']">
+          Minimo de caracteres 3.
+        </mat-error>
+      </div>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
@@ -56,15 +58,17 @@
         pattern="[a-zA-Z ]*"
         name="lastName"
       />
-      <mat-error id="lastNameErrors" *ngIf="lastName.errors?.['required']">
-        Campo requerido.
-      </mat-error>
-      <mat-error *ngIf="lastName.errors?.['pattern']">
-        Caracter no permitido.
-      </mat-error>
-      <mat-error *ngIf="lastName.errors?.['minlength']">
-        Minimo de caracteres 4.
-      </mat-error>
+      <div id="lastNameError">
+        <mat-error *ngIf="lastName.errors?.['required']">
+          Campo requerido.
+        </mat-error>
+        <mat-error *ngIf="lastName.errors?.['pattern']">
+          Caracter no permitido.
+        </mat-error>
+        <mat-error *ngIf="lastName.errors?.['minlength']">
+          Minimo de caracteres 4.
+        </mat-error>
+      </div>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
@@ -79,15 +83,17 @@
         minlength="8"
         name="teacherCode"
       />
-      <mat-error *ngIf="teacherCode.errors?.['required']">
-        Campo requerido.
-      </mat-error>
-      <mat-error *ngIf="teacherCode.errors?.['pattern']">
-        Caracter no permitido.
-      </mat-error>
-      <mat-error *ngIf="teacherCode.errors?.['minlength']">
-        Minimo de caracteres 8.
-      </mat-error>
+      <div id="teacherCodeError">
+        <mat-error *ngIf="teacherCode.errors?.['required']">
+          Campo requerido.
+        </mat-error>
+        <mat-error *ngIf="teacherCode.errors?.['pattern']">
+          Caracter no permitido.
+        </mat-error>
+        <mat-error *ngIf="teacherCode.errors?.['minlength']">
+          Minimo de caracteres 8.
+        </mat-error>
+      </div>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
@@ -102,17 +108,20 @@
         name="email"
       />
 
-      <mat-error id="emailError" *ngIf="email.errors?.['required']">
-        Campo requerido.
-      </mat-error>
-      <mat-error *ngIf="email.errors?.['email']">
-        Correo no permitido.
-      </mat-error>
+      <div id="emailError">
+        <mat-error *ngIf="email.errors?.['required']">
+          Campo requerido.
+        </mat-error>
+        <mat-error *ngIf="email.errors?.['email']">
+          Correo no permitido.
+        </mat-error>
+      </div>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Telefono</mat-label>
       <input
+        id="phone"
         matInput
         [(ngModel)]="data.phone"
         #phone="ngModel"
@@ -120,17 +129,20 @@
         minlength="8"
         name="phone"
       />
-      <mat-error *ngIf="phone.errors?.['pattern']">
-        Caracter no permitido.
-      </mat-error>
-      <mat-error *ngIf="phone.errors?.['minlength']">
-        Minimo de caracteres 8.
-      </mat-error>
+      <div id="phoneError">
+        <mat-error *ngIf="phone.errors?.['pattern']">
+          Caracter no permitido.
+        </mat-error>
+        <mat-error *ngIf="phone.errors?.['minlength']">
+          Minimo de caracteres 8.
+        </mat-error>
+      </div>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Profesión</mat-label>
       <input
+        id="jobTitle"
         matInput
         required
         [(ngModel)]="data.jobTitle"
@@ -139,15 +151,17 @@
         pattern="[a-zA-Z ]*"
         name="jobTitle"
       />
-      <mat-error *ngIf="name.errors?.['required']">
-        Campo requerido.
-      </mat-error>
-      <mat-error *ngIf="name.errors?.['pattern']">
-        Caracter no permitido.
-      </mat-error>
-      <mat-error *ngIf="name.errors?.['minlength']">
-        Minimo de caracteres 4.
-      </mat-error>
+      <div id="jobTitleError">
+        <mat-error *ngIf="name.errors?.['required']">
+          Campo requerido.
+        </mat-error>
+        <mat-error *ngIf="name.errors?.['pattern']">
+          Caracter no permitido.
+        </mat-error>
+        <mat-error *ngIf="name.errors?.['minlength']">
+          Minimo de caracteres 4.
+        </mat-error>
+      </div>
     </mat-form-field>
 
     <div class="grid grid-cols-1 float-right">

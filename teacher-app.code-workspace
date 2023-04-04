@@ -5,9 +5,13 @@
     },
     {
       "path": "../../Java/teacher-app"
+    },
+    {
+      "path": "../../../Downloads/front-teacher-app"
     }
   ],
   "settings": {
-    "java.configuration.updateBuildConfiguration": "interactive"
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "java.compile.nullAnalysis.mode": "disabled"
   }
 }

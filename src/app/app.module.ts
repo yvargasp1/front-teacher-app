@@ -24,6 +24,7 @@ import { MatButtonModule } from '@angular/material/button'
 import { FilterAddComponent } from './components/filter-add/filter-add.component'
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2'
 import { MatDialogRef } from '@angular/material/dialog'
+import { TeacherBoxComponent } from './components/teacher-box/teacher-box.component'
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { MatDialogRef } from '@angular/material/dialog'
     HomeComponent,
     FormTeacherComponent,
     FilterAddComponent,
+    TeacherBoxComponent,
   ],
   imports: [
     HttpClientModule,
@@ -60,7 +62,7 @@ import { MatDialogRef } from '@angular/material/dialog'
 
       useValue: {},
     },
-    {provide: MAT_DIALOG_DATA, useValue: {}},
+    { provide: MAT_DIALOG_DATA, useValue: {} },
     TeacherService,
   ],
   bootstrap: [AppComponent],

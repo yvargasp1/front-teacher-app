@@ -28,6 +28,12 @@ export class TeacherComponent implements OnInit {
     this.getTeachers();
   }
 
+  ngOnDestroy(): void {
+    if (this.teacherSubscription) {
+      this.teacherSubscription.unsubscribe();
+    }
+  }
+
   public onResize(event: UIEvent): void {
     const w = event.target as Window;
     this.breakpoint = w.innerWidth <= 1449 ? 2 : 3;
@@ -43,7 +49,7 @@ export class TeacherComponent implements OnInit {
     Swal.fire({
       title: '¿Está seguro?',
       showCancelButton: true,
-      cancelButtonText:'Cancelar',
+      cancelButtonText: 'Cancelar',
       confirmButtonText: 'Eliminar',
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
@@ -78,7 +84,7 @@ export class TeacherComponent implements OnInit {
       width: '400px',
       data: {
         id: teacher.id,
-        teacherCode : teacher.teacherCode,
+        teacherCode: teacher.teacherCode,
         name: teacher.name,
         lastName: teacher.lastName,
         email: teacher.email,
